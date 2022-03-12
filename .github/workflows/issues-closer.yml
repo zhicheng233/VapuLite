@@ -1,0 +1,14 @@
+name: no one care what do you think about this
+on:
+  issues:
+    types: [opened]
+jobs:
+  fakeCrackMeAAAAA:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Close Issue
+          uses: peter-evans/close-issue@v1
+          with:
+            comment: |
+              I don't fucking care
+              take it or leave it
