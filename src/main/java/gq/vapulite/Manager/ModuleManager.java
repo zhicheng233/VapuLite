@@ -72,6 +72,7 @@ public class ModuleManager {
         Modules.add(new Killaura());
         Modules.add(new BowAimBot());
         Modules.add(new NoFall());
+        Modules.add(new NoSlowDown());
         Modules.add(new MurderMystery());
         Modules.add(new FuckServer());
     }
