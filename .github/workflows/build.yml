@@ -23,7 +23,7 @@ jobs:
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: kill myse1f
-        run: chmod +x gradlew && ./gradlew build
+        run: chmod +x gradlew && ./gradlew setupCiWorkspace && ./gradlew build
       - name: go to hell
         run: mv build/libs/Client-*.jar build/libs/Client-${{ steps.vars.outputs.sha_short }}.jar
       - name: done
