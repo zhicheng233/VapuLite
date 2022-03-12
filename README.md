@@ -1,2 +1,6 @@
 # VapuLite
-*Vapu is not Vape* a minecraft inject cheat
+**Vapu is not Vape**\
+a minecraft inject cheat
+
+# Build
+gradlew build
