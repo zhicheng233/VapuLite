@@ -56,7 +56,7 @@ public class ModuleManager {
         Modules.add(new IGN());
         Modules.add(new StateMessage());
         Modules.add(new HUD());
-        Modules.add(new FullBlight());
+        Modules.add(new FullBright());
         Modules.add(new AutoTools());
         Modules.add(new IQBooster());
         Modules.add(new AutoClicker());
