@@ -1,0 +1,32 @@
+name: build
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Java setup
+        uses: actions/setup-java@v2
+        with:
+          distribution: "adopt"
+          java-version: 8
+          cache: "gradle"
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: Build
+        run: ./gradlew build
+      - name: Rename build artifacts
+        run: mv build/libs/VapuLite-*.jar build/libs/VapuLite-${{ steps.vars.outputs.sha_short }}.jar
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: VapuLite
+          path: build/libs/VapuLitet-${{ steps.vars.outputs.sha_short }}.jar
