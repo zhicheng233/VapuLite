@@ -15,7 +15,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class AutoClicker extends Module {
     private final TimerUtil timer = new TimerUtil();
-    private Numbers<Double> cps = new Numbers<Double>("CPS", "Cps",5.0, 1.0, 20.0,1.0);
+    private Numbers<Double> cps = new Numbers<Double>("CPS", "Cps",5.0, 1.0, 20.0,6.0);
     public AutoClicker() {
         super("AutoClicker", Keyboard.KEY_K, ModuleType.Combat,"auto Attack when you hold the attack button");
         this.addValues(this.cps);

@@ -33,12 +33,12 @@ import java.util.Random;
 import static gq.vapulite.Vapu.utils.Helper.mc;
 
 public class Client {
-    public boolean DebugMode = true;
+    public boolean DebugMode = false;
     // 调试时可以启用，注入成功会修改标题
 
     public static String name = "Vapu Lite";
-    public static String name2 = "VAPU";
-    public static String version = "1.51";
+    public static String real_name = "VAPU";
+    public static String version = "1.52";
     public static String config = "module";
 
     public static int Theme = new Color(0, 156, 161, 255).getRGB();
