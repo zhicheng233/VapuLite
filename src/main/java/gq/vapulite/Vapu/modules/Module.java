@@ -32,7 +32,12 @@ public class Module {
         this.category = category;
         this.Descript = Descript;
     }
-
+    public Module(String name, int key, ModuleType category) {
+        this.name = name;
+        this.key = key;
+        this.category = category;
+        this.Descript = "no desc";
+    }
     protected void addValues(Value... values) {
         Value[] var5 = values;
         int var4 = values.length;
