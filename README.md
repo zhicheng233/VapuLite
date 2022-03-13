@@ -1,6 +1,8 @@
 # Vapu Lite
 Vapu Lite is a free minecraft injection hacked client. (Not [VAPE](https://vape.gg/))
 
+*GitHub Action is Vapu Development Mod. Use at your own risk.*
+
 ![Minecraft](https://img.shields.io/badge/game-Minecraft-brightgreen) [![build](https://github.com/VapuClient/VapuLite/actions/workflows/build.yml/badge.svg)](https://github.com/VapuClient/VapuLite/actions/workflows/build.yml)
 
 Requirement: 
