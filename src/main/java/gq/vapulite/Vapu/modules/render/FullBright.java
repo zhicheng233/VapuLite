@@ -5,10 +5,10 @@ import org.lwjgl.input.Keyboard;
 import gq.vapulite.Vapu.ModuleType;
 import gq.vapulite.Vapu.modules.Module;
 
-public class FullBlight extends Module {
+public class FullBright extends Module {
     private float old;
-    public FullBlight() {
-        super("FullBlight", Keyboard.KEY_NONE, ModuleType.Render,"Make the bright for night and dark");
+    public FullBright() {
+        super("FullBright", Keyboard.KEY_NONE, ModuleType.Render,"Make the bright for night and dark");
         Chinese="夜视";
     }
 
