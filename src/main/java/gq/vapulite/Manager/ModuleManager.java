@@ -74,6 +74,7 @@ public class ModuleManager {
         Modules.add(new MurderMystery());
         Modules.add(new FuckServer());
         Modules.add(new Reach());
+        Modules.add(new HitBoxes());
         Modules.add(new StorageESP());
         Modules.add(new ESP());
     }
