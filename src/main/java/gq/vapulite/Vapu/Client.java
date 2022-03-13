@@ -38,7 +38,7 @@ public class Client {
 
     public static String name = "Vapu Lite";
     public static String name2 = "VAPU";
-    public static String version = "1.5";
+    public static String version = "1.51";
     public static String config = "module";
 
     public static int Theme = new Color(0, 156, 161, 255).getRGB();
@@ -75,9 +75,9 @@ public class Client {
         FMLCommonHandler.instance().bus().register(this);
         instance = this;
         CommandInit();
-        FontLoaders.C20.drawStringWithShadow(Client.name,114514,114514, -1);
-        FontLoaders.F14.drawStringWithShadow(Client.name,114514,114514, -1);
-        FontLoaders.Logo.drawStringWithShadow(Client.name,114514,114514, -1);
+//        FontLoaders.C20.drawStringWithShadow(Client.name,114514,114514, -1);
+//        FontLoaders.F14.drawStringWithShadow(Client.name,114514,114514, -1);
+//        FontLoaders.Logo.drawStringWithShadow(Client.name,114514,114514, -1);
         if(!instance.DebugMode){
             if(mc.isIntegratedServerRunning() || mc.isSingleplayer()){
                 Helper.sendMessageWithoutPrefix("Vapulite Load done! Press RSHIFT open ClickGui, Press H Open HUD");
