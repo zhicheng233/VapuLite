@@ -7,6 +7,10 @@ import com.google.gson.JsonObject;
 import gq.vapulite.Vapu.Client;
 import gq.vapulite.Vapu.modules.Module;
 import gq.vapulite.Vapu.utils.Helper;
+import gq.vapulite.Vapu.value.Mode;
+import gq.vapulite.Vapu.value.Numbers;
+import gq.vapulite.Vapu.value.Option;
+import gq.vapulite.Vapu.value.Value;
 
 import java.io.*;
 
@@ -32,14 +36,14 @@ public class FileManager {
             moduleJson.addProperty("state", module.getState());
             moduleJson.addProperty("key", module.getKey());
 
-//            for(final Value value : module.getValues()) {
-//                if(value.getObject() instanceof Number)
-//                    moduleJson.addProperty(value.getValueName(), (Number) value.getObject());
-//                else if(value.getObject() instanceof Boolean)
-//                    moduleJson.addProperty(value.getValueName(), (Boolean) value.getObject());
-//                else if(value.getObject() instanceof String)
-//                    moduleJson.addProperty(value.getValueName(), (String) value.getObject());
-//            }
+            for(final Value value : module.getValues()) {
+                if(value.getValue() instanceof Numbers)
+                    moduleJson.addProperty(value.getName(), (Number) value.getValue());
+                else if(value.getValue() instanceof Mode)
+                    moduleJson.addProperty(value.getName(), (String) value.getValue());
+                else if(value.getValue() instanceof Option)
+                    moduleJson.addProperty(value.getName(), (Boolean) value.getValue());
+            }
 
             jsonObject.add(module.name, moduleJson);
         }
@@ -81,16 +85,16 @@ public class FileManager {
             if(moduleJson.has("key"))
                 module.setKey(moduleJson.get("key").getAsInt());
 
-//            for(final Value value : module.getValues()) {
-//                if(!moduleJson.has(value.getValueName()))
-//                    continue;
-//
-//                if(value.getObject() instanceof Float)
-//                    value.setObject(moduleJson.get(value.getValueName()).getAsFloat());
-//                else if(value.getObject() instanceof Double)
-//                    value.setObject(moduleJson.get(value.getValueName()).getAsDouble());
-//                else if(value.getObject() instanceof Integer)
-//                    value.setObject(moduleJson.get(value.getValueName()).getAsInt());
+            for(final Value value : module.getValues()) {
+                if(!moduleJson.has(value.getName()))
+                    continue;
+
+                if(value.getValue() instanceof Option)
+                    value.setValue(moduleJson.get(value.getName()).getAsBoolean());
+                else if(value.getValue() instanceof Mode)
+                    value.setValue(moduleJson.get(value.getName()).getAsString());
+                else if(value.getValue() instanceof Numbers)
+                    value.setValue(moduleJson.get(value.getName()).getAsDouble());
 //                else if(value.getObject() instanceof Long)
 //                    value.setObject(moduleJson.get(value.getValueName()).getAsLong());
 //                else if(value.getObject() instanceof Byte)
@@ -99,7 +103,7 @@ public class FileManager {
 //                    value.setObject(moduleJson.get(value.getValueName()).getAsBoolean());
 //                else if(value.getObject() instanceof String)
 //                    value.setObject(moduleJson.get(value.getValueName()).getAsString());
-//            }
+            }
         }
     }
 }

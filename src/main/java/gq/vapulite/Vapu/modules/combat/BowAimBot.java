@@ -21,7 +21,7 @@ public class BowAimBot extends Module {
     public EntityLivingBase target;
     public float rangeAimVelocity = 0.0f;
     public BowAimBot() {
-        super("BotAimBot", Keyboard.KEY_NONE, ModuleType.Combat);
+        super("BowAimBot", Keyboard.KEY_NONE, ModuleType.Combat,"AutoAim Target when you using bow");
         Chinese="弓箭自瞄";
     }
 

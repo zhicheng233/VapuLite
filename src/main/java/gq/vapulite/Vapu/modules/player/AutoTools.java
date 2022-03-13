@@ -10,7 +10,7 @@ import gq.vapulite.Vapu.modules.Module;
 
 public class AutoTools extends Module {
     public AutoTools() {
-        super("AutoTools", Keyboard.KEY_I, ModuleType.Player);
+        super("AutoTools", Keyboard.KEY_I, ModuleType.Player,"Switch correct tools when you destroy blocks");
         Chinese="自动工具";
     }
 

@@ -3,6 +3,8 @@
  */
 package gq.vapulite.render;
 
+import net.minecraft.client.renderer.WorldRenderer;
+
 import java.awt.*;
 
 public interface Tessellation {
@@ -35,5 +37,6 @@ public interface Tessellation {
     public static Tessellation createExpanding(int size, float ratio, float factor) {
         return new ExpandingTess(size, ratio, factor);
     }
+
 }
 

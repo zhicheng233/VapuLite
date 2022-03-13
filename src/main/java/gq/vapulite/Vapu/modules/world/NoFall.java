@@ -27,7 +27,7 @@ public class NoFall extends Module {
     private final TimerUtil timer = new TimerUtil();
     private boolean handling;
     public NoFall() {
-        super("AutoMLG", Keyboard.KEY_NONE, World);
+        super("AutoMLG", Keyboard.KEY_NONE, World,"Auto use bukkit when you fall");
         Chinese="无摔落";
     }
 

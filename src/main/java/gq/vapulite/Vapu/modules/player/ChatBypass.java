@@ -8,7 +8,7 @@ import org.lwjgl.input.Keyboard;
 
 public class ChatBypass extends Module {
     public ChatBypass() {
-        super("ChatBypass", Keyboard.KEY_NONE, ModuleType.Player);
+        super("ChatBypass", Keyboard.KEY_NONE, ModuleType.Player,"");
         Chinese="聊天绕过";
     }
 

@@ -7,7 +7,7 @@ import gq.vapulite.Vapu.modules.Module;
 
 public class StateMessage extends Module {
     public StateMessage() {
-        super("NoStateMessage", Keyboard.KEY_V, ModuleType.Render);
+        super("NoStateMessage", Keyboard.KEY_NONE, ModuleType.Render,"Not Show Modules State info");
         Chinese="无开关信息";
     }
 

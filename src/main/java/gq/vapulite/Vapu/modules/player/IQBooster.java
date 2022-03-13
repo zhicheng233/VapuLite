@@ -286,7 +286,7 @@ public class IQBooster extends Module {
             "妳是不是畏懼妳爹爹的速度了啊", "妳是不是對這些詞彙壹竅不通啊", "妳是不是什麽都不懂啊"};
 
     public IQBooster(){
-        super("LTap", Keyboard.KEY_L, ModuleType.Player);
+        super("LTap", Keyboard.KEY_L, ModuleType.Player,"send obscenities when you press P (L mean Love)");
         Chinese="嘴臭模式";
     }
 

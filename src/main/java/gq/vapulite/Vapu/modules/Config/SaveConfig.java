@@ -11,7 +11,7 @@ import static org.lwjgl.input.Keyboard.KEY_N;
 
 public class SaveConfig extends Module {
     public SaveConfig() {
-        super("SaveConfig", KEY_N, ModuleType.Config);
+        super("SaveConfig", KEY_N, ModuleType.Config,"Save your module setting(config)");
         Chinese="保存配置";
         NoToggle=true;
     }

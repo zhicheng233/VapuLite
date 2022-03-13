@@ -23,6 +23,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Base64;
@@ -37,13 +38,19 @@ public class Client {
 
     public static String name = "Vapu Lite";
     public static String name2 = "VAPU";
-    public static String version = "1.4";
+    public static String version = "1.5";
     public static String config = "module";
+
+    public static int Theme = new Color(0, 156, 161, 255).getRGB();
+    public static int ThemeR = 0;
+    public static int ThemeG = 156;
+    public static int ThemeB = 161;
 
     public static boolean MessageON = true;
     public static boolean StringBigSnakeDetection = false;
     public static boolean AutoBlock = false;
     public static boolean ChatBypass = false;
+    public static boolean FluxTheme = false;
     public static boolean CHINESE = false;
     public static Client instance;
     public static boolean state = false;

@@ -13,7 +13,7 @@ import org.lwjgl.input.Keyboard;
 
 public class TargetHUD extends Module {
     public TargetHUD() {
-        super("TargetHUD", Keyboard.KEY_NONE, ModuleType.Render);
+        super("TargetHUD", Keyboard.KEY_NONE, ModuleType.Render,"");
         Chinese="目标HUD";
     }
 

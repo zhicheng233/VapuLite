@@ -1,11 +1,16 @@
 package gq.vapulite.Vapu.utils;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
+import java.awt.*;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.HashMap;
@@ -13,6 +18,9 @@ import java.util.Locale;
 import java.util.Map;
 
 import static gq.vapulite.Vapu.utils.Helper.mc;
+import static gq.vapulite.Vapu.utils.RenderUtil.drawRoundedRect;
+import static org.lwjgl.opengl.GL11.GL_POLYGON_SMOOTH;
+import static org.lwjgl.opengl.GL13.GL_MULTISAMPLE;
 
 public class RenderUtils {
     private static final AxisAlignedBB DEFAULT_AABB = new AxisAlignedBB(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
@@ -443,6 +451,68 @@ public class RenderUtils {
         GL11.glVertex3d(bb.minX, bb.maxY, bb.maxZ);
         GL11.glVertex3d(bb.minX, bb.maxY, bb.minZ);
         GL11.glEnd();
+    }
+
+    public static void drawImage(float x, float y, final int width, final int height, final ResourceLocation image, Color color) {
+        ScaledResolution scaledResolution = new ScaledResolution(Minecraft.getMinecraft());
+        GL11.glDisable(2929);
+        GL11.glEnable(3042);
+        GL11.glDepthMask(false);
+        OpenGlHelper.glBlendFunc(770, 771, 1, 0);
+        GL11.glColor4f(color.getRed() / 255F, color.getGreen() / 255F, color.getBlue() / 255F, 1.0f);
+        Minecraft.getMinecraft().getTextureManager().bindTexture(image);
+        Gui.drawModalRectWithCustomSizedTexture((int) x, (int) y, 0.0f, 0.0f, width, height, (float) width, (float) height);
+        GL11.glDepthMask(true);
+        GL11.glDisable(3042);
+        GL11.glEnable(2929);
+    }
+
+    public static void drawRoundRect(float x, float y, float x1, float y1, int color) {
+        drawRoundedRect(x, y, x1, y1, color, color);
+        GlStateManager.color(1,1,1);
+    }
+
+    public static void drawCircle(double x, double y, double radius, int c) {
+        GL11.glEnable(GL_MULTISAMPLE);
+        GL11.glEnable(GL_POLYGON_SMOOTH);
+        float alpha = (float) (c >> 24 & 255) / 255.0f;
+        float red = (float) (c >> 16 & 255) / 255.0f;
+        float green = (float) (c >> 8 & 255) / 255.0f;
+        float blue = (float) (c & 255) / 255.0f;
+        boolean blend = GL11.glIsEnabled((int) 3042);
+        boolean line = GL11.glIsEnabled((int) 2848);
+        boolean texture = GL11.glIsEnabled((int) 3553);
+        if (!blend) {
+            GL11.glEnable((int) 3042);
+        }
+        if (!line) {
+            GL11.glEnable((int) 2848);
+        }
+        if (texture) {
+            GL11.glDisable((int) 3553);
+        }
+        GL11.glBlendFunc((int) 770, (int) 771);
+        GL11.glColor4f((float) red, (float) green, (float) blue, (float) alpha);
+        GL11.glBegin((int) 9);
+        int i = 0;
+        while (i <= 360) {
+            GL11.glVertex2d(
+                    (double) ((double) x + Math.sin((double) ((double) i * 3.141526 / 180.0)) * (double) radius),
+                    (double) ((double) y + Math.cos((double) ((double) i * 3.141526 / 180.0)) * (double) radius));
+            ++i;
+        }
+        GL11.glEnd();
+        if (texture) {
+            GL11.glEnable((int) 3553);
+        }
+        if (!line) {
+            GL11.glDisable((int) 2848);
+        }
+        if (!blend) {
+            GL11.glDisable((int) 3042);
+        }
+        GL11.glDisable(GL_POLYGON_SMOOTH);
+        GL11.glClear(0);
     }
 //
 //    public static void drawBoundingBox(AxisAlignedBB aa) {

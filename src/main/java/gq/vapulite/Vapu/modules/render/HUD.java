@@ -16,7 +16,7 @@ import java.util.Comparator;
 
 public class HUD extends Module {
     public HUD() {
-        super("HUD", Keyboard.KEY_H, ModuleType.Render);
+        super("HUD", Keyboard.KEY_H, ModuleType.Render,"Show " + Client.name + " HUD Screen");
         Chinese="HUD界面";
     }
 

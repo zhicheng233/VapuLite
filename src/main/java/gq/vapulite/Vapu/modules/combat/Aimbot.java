@@ -19,7 +19,7 @@ public class Aimbot extends Module {
     private final TimerUtil timer = new TimerUtil();
     public EntityLivingBase target;
     public Aimbot() {
-        super("Aimbot", Keyboard.KEY_NONE, ModuleType.Combat);
+        super("Aimbot", Keyboard.KEY_NONE, ModuleType.Combat,"Automatically aim at your target");
         Chinese="自瞄";
     }
 

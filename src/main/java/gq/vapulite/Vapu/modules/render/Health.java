@@ -18,7 +18,7 @@ public class Health extends Module {
     int fuck = 0;
     private int width;
     public Health() {
-        super("Health", Keyboard.KEY_NONE, ModuleType.Render);
+        super("Health", Keyboard.KEY_NONE, ModuleType.Render,"show your health on your screen");
         Chinese="血量显示";
     }
 

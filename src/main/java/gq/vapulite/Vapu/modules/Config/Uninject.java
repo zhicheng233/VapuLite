@@ -11,7 +11,7 @@ import static org.lwjgl.input.Keyboard.KEY_NONE;
 
 public class Uninject extends Module {
     public Uninject() {
-        super("Uninject", KEY_NONE, ModuleType.Config);
+        super("Uninject", KEY_NONE, ModuleType.Config,"Uninject "+Client.name);
         Chinese="卸载";
         NoToggle=true;
     }

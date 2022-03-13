@@ -54,11 +54,9 @@ public class ModuleManager {
         Modules.add(new Sprint());
         Modules.add(new ClickGUI());
         Modules.add(new IGN());
-        Modules.add(new HitBoxes());
         Modules.add(new StateMessage());
         Modules.add(new HUD());
         Modules.add(new FullBlight());
-        Modules.add(new AutoBlock());
         Modules.add(new AutoTools());
         Modules.add(new IQBooster());
         Modules.add(new AutoClicker());
@@ -72,8 +70,10 @@ public class ModuleManager {
         Modules.add(new Killaura());
         Modules.add(new BowAimBot());
         Modules.add(new NoFall());
-        Modules.add(new NoSlowDown());
         Modules.add(new MurderMystery());
         Modules.add(new FuckServer());
+        Modules.add(new Reach());
+        Modules.add(new StorageESP());
+        Modules.add(new ESP());
     }
 }

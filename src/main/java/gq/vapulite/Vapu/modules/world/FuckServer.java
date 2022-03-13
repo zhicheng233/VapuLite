@@ -11,7 +11,7 @@ import org.lwjgl.input.Keyboard;
 
 public class FuckServer extends Module {
     public FuckServer() {
-        super("FuckServer", Keyboard.KEY_NONE, ModuleType.World);
+        super("FuckServer", Keyboard.KEY_NONE, ModuleType.World,"send packet make server shutdown (work on small server only)");
         Chinese="崩服务器";
     }
 

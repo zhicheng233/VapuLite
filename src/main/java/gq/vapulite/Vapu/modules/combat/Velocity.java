@@ -10,7 +10,7 @@ import org.lwjgl.input.Keyboard;
 
 public class Velocity extends Module {
     public Velocity() {
-        super("Velocity", Keyboard.KEY_NONE, ModuleType.Combat);
+        super("Velocity", Keyboard.KEY_NONE, ModuleType.Combat,"");
         Chinese="反击退";
     }
 

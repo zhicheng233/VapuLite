@@ -8,7 +8,7 @@ import org.lwjgl.input.Keyboard;
 
 public class Speed extends Module {
     public Speed() {
-        super("Speed", Keyboard.KEY_G, ModuleType.Movement);
+        super("Speed", Keyboard.KEY_G, ModuleType.Movement,"");
         Chinese="加速";
     }
 

@@ -5,6 +5,8 @@ import gq.vapulite.Vapu.ModuleType;
 import gq.vapulite.Vapu.Value;
 import gq.vapulite.Vapu.modules.Module;
 import gq.vapulite.Vapu.utils.TimerUtil;
+import gq.vapulite.Vapu.value.Numbers;
+import gq.vapulite.Vapu.value.Option;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.EntityLivingBase;
@@ -25,18 +27,21 @@ import static net.minecraft.realms.RealmsMth.wrapDegrees;
 public class Killaura extends Module {
     private final TimerUtil timer = new TimerUtil();
     public static EntityLivingBase target;
-    private Value<Float> rangeValue = new Value<>("Range", 4.2F);
+    private Numbers<Double> rangeValue = new Numbers<Double>("Range", "Range",4.2, 1.0, 6.0,1.0);
+    private Numbers<Double> cps = new Numbers<Double>("Cps", "Cps",10.0, 1.0, 20.0,1.0);
+    private Option<Boolean> autoblock = new Option<Boolean>("AutoBlock","AutoBlock", true);
     public Killaura() {
-        super("Killaura", Keyboard.KEY_NONE, ModuleType.Combat);
+        super("Killaura", Keyboard.KEY_NONE, ModuleType.Combat,"Auto Attack the entity near you");
+        this.addValues(this.rangeValue,this.autoblock,this.cps);
         Chinese="杀戮光环";
     }
 
     @SubscribeEvent
     public void onTick(TickEvent event) {
-        if (timer.delay(1000 / ThreadLocalRandom.current().nextInt((int) 5, (int) 10))) {
+        if (timer.delay(1000 / ThreadLocalRandom.current().nextInt((int) 1, this.cps.getValue().intValue()))) {
             this.updateTarget();
             assistFaceEntity(target, (float) 20.0, (float) 20.0);
-            Object[] objects = mc.theWorld.loadedEntityList.stream().filter(entity -> entity instanceof EntityLivingBase && entity != mc.thePlayer && ((EntityLivingBase) entity).getHealth() > 0F && entity.getDistanceToEntity(mc.thePlayer) <= rangeValue.getObject()).sorted(Comparator.comparingDouble(entity -> entity.getDistanceToEntity(mc.thePlayer))).toArray();
+            Object[] objects = mc.theWorld.loadedEntityList.stream().filter(entity -> entity instanceof EntityLivingBase && entity != mc.thePlayer && ((EntityLivingBase) entity).getHealth() > 0F && entity.getDistanceToEntity(mc.thePlayer) <= rangeValue.getValue()).sorted(Comparator.comparingDouble(entity -> entity.getDistanceToEntity(mc.thePlayer))).toArray();
             if (objects.length > 0)
                 target = (EntityLivingBase) objects[0];
             if(target == null || AntiBot.isServerBot(target))
@@ -47,7 +52,7 @@ public class Killaura extends Module {
 //                return;
             mc.thePlayer.swingItem();
             mc.getNetHandler().addToSendQueue(new C02PacketUseEntity(target, C02PacketUseEntity.Action.ATTACK));
-            if (Client.AutoBlock){
+            if ((Boolean) this.autoblock.getValue()){
                 mc.thePlayer.getHeldItem().useItemRightClick(mc.theWorld, mc.thePlayer);
             }
             target = null;

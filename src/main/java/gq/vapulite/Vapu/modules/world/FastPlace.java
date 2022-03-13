@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class FastPlace extends Module {
     private final TimerUtil timer = new TimerUtil();
     public FastPlace() {
-        super("FastPlace", Keyboard.KEY_C, ModuleType.World);
+        super("FastPlace", Keyboard.KEY_NONE, ModuleType.World,"Make you place the blocks faster");
         Chinese="快速放置";
     }
 

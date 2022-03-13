@@ -8,7 +8,7 @@ import gq.vapulite.Vapu.modules.Module;
 public class FullBlight extends Module {
     private float old;
     public FullBlight() {
-        super("FullBlight", Keyboard.KEY_F, ModuleType.Render);
+        super("FullBlight", Keyboard.KEY_NONE, ModuleType.Render,"Make the bright for night and dark");
         Chinese="夜视";
     }
 

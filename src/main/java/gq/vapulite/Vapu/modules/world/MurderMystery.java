@@ -26,7 +26,7 @@ public class MurderMystery extends Module {
     private static List<EntityPlayer> bw;
 
     public MurderMystery() {
-        super("MurderMystery", Keyboard.KEY_NONE, ModuleType.World);
+        super("MurderMystery", Keyboard.KEY_NONE, ModuleType.World,"Detection Murders in Murder game");
         Chinese="杀手检查";
     }
 

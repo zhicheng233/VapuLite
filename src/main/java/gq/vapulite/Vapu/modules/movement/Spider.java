@@ -8,7 +8,7 @@ import org.lwjgl.input.Keyboard;
 
 public class Spider extends Module {
     public Spider() {
-        super("Spider", Keyboard.KEY_NONE, ModuleType.Movement);
+        super("Spider", Keyboard.KEY_NONE, ModuleType.Movement,"");
         Chinese="蜘蛛侠";
     }
     @SubscribeEvent

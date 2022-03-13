@@ -3,8 +3,7 @@ package gq.vapulite.Vapu.modules;
 import gq.vapulite.Vapu.ModuleType;
 import gq.vapulite.Vapu.utils.Helper;
 import gq.vapulite.Vapu.Client;
-import gq.vapulite.values.Value;
-import gq.vapulite.values.type.NewMode;
+import gq.vapulite.Vapu.value.Value;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,36 +17,31 @@ public class Module {
     public boolean state = false;
     public int key;
     public List<Value> values = new ArrayList<>();
-    public List<NewMode> newModes = new ArrayList<>();
     public static String Chinese;
+    public static String About;
     public static boolean NoToggle = false;
     public String name;
+    public String Descript;
     public ModuleType category;
+    public float optionAnim = 0;// present
+    public float optionAnimNow = 0;// present
 
-    public Module(String name, int key, ModuleType category) {
+    public Module(String name, int key, ModuleType category, String Descript) {
         this.name = name;
         this.key = key;
         this.category = category;
+        this.Descript = Descript;
     }
 
-    public void addValues(Value... values) {
-        Value[] v1 = values;
-        int vl = values.length;
+    protected void addValues(Value... values) {
+        Value[] var5 = values;
+        int var4 = values.length;
 
-        for (int i = 0; i < vl; ++i) {
-            Value value = v1[i];
+        for (int var3 = 0; var3 < var4; ++var3) {
+            Value value = var5[var3];
             this.values.add(value);
         }
-    }
 
-    public void addValues(NewMode... values) {
-        NewMode[] v1 = values;
-        int vl = values.length;
-
-        for (int i = 0; i < vl; ++i) {
-            NewMode value = v1[i];
-            this.newModes.add(value);
-        }
     }
 
     public List<Value> getValues() {
@@ -99,6 +93,10 @@ public class Module {
         return name;
     }
 
+    public String getDes() {
+        return About;
+    }
+
     public String getChinese() {
         return Chinese;
     }
@@ -128,5 +126,10 @@ public class Module {
     }
 
     public void onRenderWorldLast(RenderWorldLastEvent event) {
+    }
+
+
+    public String getDescription() {
+        return About;
     }
 }

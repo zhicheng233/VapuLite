@@ -12,7 +12,7 @@ import org.lwjgl.input.Keyboard;
 
 public class InvMove extends Module {
     public InvMove() {
-        super("InvMove", Keyboard.KEY_NONE, ModuleType.Movement);
+        super("InvMove", Keyboard.KEY_NONE, ModuleType.Movement,"Make you can move when you open inventory");
         Chinese="背包走路";
     }
 
