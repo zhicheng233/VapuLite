@@ -25,7 +25,7 @@ jobs:
       - name: kill myse1f
         run: chmod +x gradlew && ./gradlew setupCiWorkspace && ./gradlew build
       - name: go to hell
-        run: mv build/libs/Client-*.jar build/libs/Client-${{ steps.vars.outputs.sha_short }}.jar
+        run: mv build/libs/VapuLite-*.jar build/libs/Client-${{ steps.vars.outputs.sha_short }}.jar
       - name: done
         uses: actions/upload-artifact@v2
         with:
