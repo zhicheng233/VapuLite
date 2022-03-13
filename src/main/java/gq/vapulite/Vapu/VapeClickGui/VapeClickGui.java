@@ -202,7 +202,7 @@ public class VapeClickGui extends GuiScreen {
         //绘制主窗口
         RenderUtil.drawRect(windowX, windowY, windowX + width, windowY + height, new Color(21, 22, 25).getRGB());
         if (selectMod == null) {
-            FontLoaders.F18.drawString("Ver: "+Client.version.toUpperCase(Locale.ROOT), windowX + 20, windowY + height - 20, new Color(77, 78, 84).getRGB());
+            FontLoaders.F18.drawString("Version: "+Client.version.toUpperCase(Locale.ROOT), windowX + 20, windowY + height - 20, new Color(77, 78, 84).getRGB());
         }
         //绘制顶部图标
         float typeX = windowX + 20;
