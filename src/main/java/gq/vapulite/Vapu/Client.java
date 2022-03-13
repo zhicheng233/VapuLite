@@ -33,7 +33,7 @@ import java.util.Random;
 import static gq.vapulite.Vapu.utils.Helper.mc;
 
 public class Client {
-    public boolean DebugMode = false;
+    public boolean DebugMode = true;
     // 调试时可以启用，注入成功会修改标题
 
     public static String name = "Vapu Lite";
