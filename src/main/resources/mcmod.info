@@ -1,0 +1,16 @@
+[
+{
+  "modid": "VapuLite",
+  "name": "VapuLite",
+  "description": "VapuLite Client",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Ceeyourbac","mckuhei"],
+  "credits": "Forge Team",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
