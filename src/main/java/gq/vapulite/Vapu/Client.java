@@ -37,7 +37,7 @@ public class Client {
     // 调试时可以启用，注入成功会修改标题
 
     public static String name = "Vapu Lite";
-    public static String name2 = "VAPU";
+    public static String real_name = "VAPU";
     public static String version = "1.52";
     public static String config = "module";
 
