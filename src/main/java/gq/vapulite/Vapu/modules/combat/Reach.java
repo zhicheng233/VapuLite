@@ -32,7 +32,7 @@ public class Reach extends Module {
     public Reach() {
             super("Reach", Keyboard.KEY_NONE, ModuleType.Combat,"Make you can attack far target");
             this.addValues(this.weaponOnly,this.movingOnly,this.sprintOnly,this.hitThroughBlocks,this.MinReach);
-            Chinese="Reaching";
+            Chinese="长臂猿";
         }
     @SubscribeEvent
     public void onMove(final MouseEvent ev) {

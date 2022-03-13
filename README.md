@@ -23,3 +23,7 @@ this project entirely or partially for free and even commercially. However, plea
 - **Your modified application must also be licensed under the GPL**
 
 Do the above and share your source code with everyone; just like we do.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=VapuClient/VapuLite&type=Date)](https://star-history.com/#VapuClient/VapuLite&Date)
