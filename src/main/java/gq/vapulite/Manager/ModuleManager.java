@@ -51,6 +51,7 @@ public class ModuleManager {
     static {
         // 没Add的都是有问题的，不要add
         Modules.add(new AntiBot());
+        Modules.add(new Speed());
         Modules.add(new Sprint());
         Modules.add(new ClickGUI());
         Modules.add(new IGN());

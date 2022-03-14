@@ -26,6 +26,23 @@ this project entirely or partially for free and even commercially. However, plea
 
 Do the above and share your source code with everyone; just like we do.
 
+#Example Module
+~~~java
+package gq.vapulite.Vapu.modules;
+
+import gq.vapulite.Vapu.ModuleType;
+import org.lwjgl.input.Keyboard;
+
+public class ExampleModule extends Module {
+    public ExampleModule() {
+        super("ExampleModule", Keyboard.KEY_NONE, ModuleType.Config,"Example Module");
+        Chinese="ExampleModule";
+    }
+
+
+}
+~~~
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=VapuClient/VapuLite&type=Date)](https://star-history.com/#VapuClient/VapuLite&Date)
