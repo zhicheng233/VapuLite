@@ -8,6 +8,7 @@ public enum ModuleType{
     Movement("Movement", "移动类"),
     Player("Player", "玩家类"),
     World("World", "世界类"),
+    Other("Other", "其他"),
     Config("Global", "全局设置");
 
     private final String name;

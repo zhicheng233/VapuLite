@@ -51,6 +51,7 @@ public class ModuleManager {
     static {
         // 没Add的都是有问题的，不要add
         Modules.add(new AntiBot());
+        Modules.add(new Speed());
         Modules.add(new Sprint());
         Modules.add(new ClickGUI());
         Modules.add(new IGN());
@@ -67,7 +68,7 @@ public class ModuleManager {
         Modules.add(new Uninject());
         Modules.add(new InvMove());
         Modules.add(new Health());
-        Modules.add(new Killaura());
+        Modules.add(new KillAura());
         Modules.add(new BowAimBot());
         Modules.add(new NoFall());
         Modules.add(new NoSlowDown());

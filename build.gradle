@@ -44,7 +44,6 @@ repositories {
 //    maven { url 'https://maven.enaium.cn' }
 }
 
-
 archivesBaseName = "VapuLite"
 
 sourceCompatibility = JavaVersion.VERSION_1_8
