@@ -32,6 +32,7 @@ public class KillAura extends Module {
     private Option<Boolean> autoblock = new Option<Boolean>("AutoBlock","AutoBlock", true);
     public KillAura() {
         super("KillAura", Keyboard.KEY_NONE, ModuleType.Combat,"Auto Attack the entity near you");
+        //TODO Target
         this.addValues(this.rangeValue,this.autoblock,this.cps);
         Chinese="杀戮光环";
     }
