@@ -23,7 +23,7 @@ buildscript {
     dependencies {
         classpath "net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT"
         classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.0.10"
-        classpath "com.github.jengelman.gradle.plugins:shadow:4.0.4"
+        classpath "com.github.jengelman.gradle.plugins:shadow:7.1.2"
     }
 }
 
@@ -44,7 +44,8 @@ repositories {
 //    maven { url 'https://maven.enaium.cn' }
 }
 
-
+group = "gq.vapulite"
+version = "1.6"
 archivesBaseName = "VapuLite"
 
 sourceCompatibility = JavaVersion.VERSION_1_8
