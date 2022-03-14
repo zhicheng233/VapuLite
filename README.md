@@ -40,7 +40,7 @@ public class ExampleModule extends Module {
         Chinese="ExampleModule";
     }
     
-    //There is your code
+    //here is your code
 
 }
 ~~~
