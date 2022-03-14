@@ -46,7 +46,3 @@ public class ExampleModule extends Module {
 
 }
 ~~~
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=VapuClient/VapuLite&type=Date)](https://star-history.com/#VapuClient/VapuLite&Date)
