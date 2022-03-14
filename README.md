@@ -26,7 +26,7 @@ this project entirely or partially for free and even commercially. However, plea
 
 Do the above and share your source code with everyone; just like we do.
 
-#Example Module
+## Example Module
 ~~~java
 package gq.vapulite.Vapu.modules;
 
