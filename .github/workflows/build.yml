@@ -28,7 +28,7 @@ jobs:
         run: ./gradlew build
         
       - name: Rename build artifacts
-        run: mv build/libs/VapuLite.jar build/libs/VapuLite-${{ steps.vars.outputs.sha_short }}-Development.jar
+        run: mv build/libs/VapuLite-1.6.jar build/libs/VapuLite-${{ steps.vars.outputs.sha_short }}-Development.jar
         
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
