@@ -53,7 +53,7 @@ public class KillAura extends Module {
 //                return;
             mc.thePlayer.swingItem();
             mc.getNetHandler().addToSendQueue(new C02PacketUseEntity(target, C02PacketUseEntity.Action.ATTACK));
-            if ((Boolean) this.autoblock.getValue()){
+            if ((Boolean) this.autoblock.getValue() && mc.thePlayer.getCurrentEquippedItem() != null){
                 mc.thePlayer.getHeldItem().useItemRightClick(mc.theWorld, mc.thePlayer);
             }
             target = null;
