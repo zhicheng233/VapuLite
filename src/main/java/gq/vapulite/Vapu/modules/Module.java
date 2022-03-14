@@ -54,9 +54,9 @@ public class Module {
         if(NoToggle){
             if(Client.MessageON){
                 if (this.state) {
-                    Helper.sendMessage(this.getName() + " Disabled");
+                    Helper.sendMessage("Module" + this.getName() + " Disabled");
                 } else {
-                    Helper.sendMessage(this.getName() + " Enabled");
+                    Helper.sendMessage("Module" + this.getName() + " Enabled");
                 }
             }
         }

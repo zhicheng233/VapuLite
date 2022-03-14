@@ -24,14 +24,14 @@ import java.util.concurrent.ThreadLocalRandom;
 import static net.minecraft.realms.RealmsMth.sqrt;
 import static net.minecraft.realms.RealmsMth.wrapDegrees;
 
-public class Killaura extends Module {
+public class KillAura extends Module {
     private final TimerUtil timer = new TimerUtil();
     public static EntityLivingBase target;
     private Numbers<Double> rangeValue = new Numbers<Double>("Range", "Range",4.2, 1.0, 6.0,1.0);
     private Numbers<Double> cps = new Numbers<Double>("Cps", "Cps",10.0, 1.0, 20.0,1.0);
     private Option<Boolean> autoblock = new Option<Boolean>("AutoBlock","AutoBlock", true);
-    public Killaura() {
-        super("Killaura", Keyboard.KEY_NONE, ModuleType.Combat,"Auto Attack the entity near you");
+    public KillAura() {
+        super("KillAura", Keyboard.KEY_NONE, ModuleType.Combat,"Auto Attack the entity near you");
         this.addValues(this.rangeValue,this.autoblock,this.cps);
         Chinese="杀戮光环";
     }

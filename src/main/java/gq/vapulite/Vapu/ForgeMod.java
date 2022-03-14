@@ -7,7 +7,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.io.IOException;
 
-@Mod(modid="VapuLite", name="VapuLite", version="1.0.0", acceptedMinecraftVersions="[1.8.9]")
+@Mod(modid="VapuLite", name="VapuLite", version="1.5", acceptedMinecraftVersions="[1.8.9]")
 public class ForgeMod {
 	@SideOnly(Side.CLIENT)
     @Mod.EventHandler
@@ -18,6 +18,6 @@ public class ForgeMod {
 	@SideOnly(Side.SERVER)
     @Mod.EventHandler
     public void initServer(FMLPreInitializationEvent event) {
-        System.out.println("666主播居然要给服务器安装Vapu");
+        System.out.println("666主播居然要给服务器安装Vapu暴打玩家是吧");
     }
 }

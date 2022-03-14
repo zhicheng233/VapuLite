@@ -67,7 +67,7 @@ public class ModuleManager {
         Modules.add(new Uninject());
         Modules.add(new InvMove());
         Modules.add(new Health());
-        Modules.add(new Killaura());
+        Modules.add(new KillAura());
         Modules.add(new BowAimBot());
         Modules.add(new NoFall());
         Modules.add(new MurderMystery());
